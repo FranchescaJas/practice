@@ -1,0 +1,19 @@
+
+public class JAS {
+
+	
+	
+	public static long count(String input, char ch) {
+		
+		return input.chars().filter(c-> c== ch).count();
+		
+		//return null ;
+	}
+	
+	
+	public static void main(String arg[]) {
+		String input = "Jayashree Das";
+		char c = 'e';
+		System.out.print(count(input,c));
+	}
+}
