@@ -1,0 +1,41 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Stream;
+
+/**
+ * 
+ * 
+ * program to slice a stream from start to end Index
+ * 
+ * 
+ * 
+ */
+public class JAS {
+
+	
+	
+	public static <T> Stream <T> getSliceFromStream(Stream<T> stream , int start , int end){
+		// skip and limit functions are available in stream only
+		return stream
+				.skip(start)
+				.limit(end - start +1);
+	}
+	
+	public static void main(String arg[]) {
+		List<Integer> list = new ArrayList<>();
+		for(int i = 3; i < 23; i++) {
+			list.add(i);
+		}
+		
+		// before sending it's required convert to stream
+		Stream<Integer> stream = list.stream();
+		System.out.println("List val" + list);
+		// send that converted stream
+		Stream<Integer> result_stream = getSliceFromStream(stream,2,9);
+		result_stream.forEach(System.out::println);
+		
+	}
+	
+	
+	
+}
